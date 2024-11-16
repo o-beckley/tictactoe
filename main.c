@@ -7,7 +7,6 @@ void main(void) {
     int c;
     int turn = 1;
     while(winner() == 0) {
-        sleep(1);
         system("clear");
         print_board();
         printf("Player %c's turn: ", turn == 1 ? 'x' : 'o');
@@ -17,6 +16,7 @@ void main(void) {
         if(play_move(turn, c - '0'))
             turn = turn == 1 ? 2 : 1;
         printf("\n");
+        sleep(1);
     }
     sleep(1);
     system("clear");
