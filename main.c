@@ -6,13 +6,15 @@
 void main(void) {
     int c;
     int turn = 1;
-    while(winner() == 0) {
+    while(winner() == 0 && !game_over()) {
         system("clear");
         print_board();
         printf("Player %c's turn: ", turn == 1 ? 'x' : 'o');
         c = getchar();
-        if(c == '\n')
+        if(c == '\n') {
+            putchar('\n');
             continue;
+        }
         if(play_move(turn, c - '0'))
             turn = turn == 1 ? 2 : 1;
         printf("\n");
@@ -23,6 +25,8 @@ void main(void) {
     print_board();
     if(winner() == 1)
         printf("Player x wins\n");
-    else
+    else if(winner() == 2)
         printf("Player o wins\n");
+    else
+        printf("It's a tie!\n");
 }

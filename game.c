@@ -60,3 +60,10 @@ int play_move(int player, int position) {
     board[position] = player;
     return 1;
 }
+
+int game_over() {
+    for(int i = 0; i < 9; i++)
+        if(board[i] == 0) // found an empty slot
+            return 0;
+    return 1;
+}
