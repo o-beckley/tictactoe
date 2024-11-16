@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "tictactoe.h"
 
-void main(void) {
+int main(void) {
     int c;
     int turn = 1;
     while(!game_over()) {
@@ -28,4 +28,6 @@ void main(void) {
         printf("Player o wins\n");
     else
         printf("It's a tie!\n");
+    exit(0);
+    return 0;
 }
