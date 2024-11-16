@@ -28,7 +28,6 @@ void main(void) {
         print_board();
         printf("Player %c's turn: ", turn == 1 ? 'x' : 'o');
         c = getchar();
-        fflush(stdin);
         if(play_move(turn, c - '0'))
             turn = turn == 1 ? 2 : 1;
         printf("\n");
