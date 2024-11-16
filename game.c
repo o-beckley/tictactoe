@@ -48,12 +48,10 @@ int winner() {
 
 int play_move(int player, int position) {
     if(position < 0 || position > 8) {
-        fputc('\n', stderr);
         fputs("This is not a valid position\n", stderr);
         return 0;
     }
     if(board[position] != 0) {
-        fputc('\n', stderr);
         fputs("This position is already taken by another player\n", stderr);
         return 0;
     }
