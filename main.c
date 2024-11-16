@@ -2,7 +2,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "tictactoe.h"
-
+void clear_buffer() {
+    int c;
+    while((c = getchar()) != '\n' && c != EOF)
+        ;
+}
 int main(void) {
     int c;
     int turn = 1;
@@ -11,10 +15,7 @@ int main(void) {
         print_board();
         printf("Player %c's turn: ", turn == 1 ? 'x' : 'o');
         c = getchar();
-        if(c == '\n') {
-            putchar('\n');
-            continue;
-        }
+        clear_buffer();
         if(play_move(turn, c - '0'))
             turn = turn == 1 ? 2 : 1;
         printf("\n");
