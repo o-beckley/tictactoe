@@ -18,7 +18,7 @@ void main(void) {
         if(play_move(turn, c - '0'))
             turn = turn == 1 ? 2 : 1;
         printf("\n");
-        sleep(1);
+        usleep(500000);
     }
     system("clear");
     print_board();
