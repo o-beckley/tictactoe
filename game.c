@@ -62,6 +62,8 @@ int play_move(int player, int position) {
 }
 
 int game_over() {
+    if(winner() != 0) // someone has won
+        return 1;
     for(int i = 0; i < 9; i++)
         if(board[i] == 0) // found an empty slot
             return 0;

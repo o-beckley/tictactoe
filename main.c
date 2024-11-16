@@ -6,7 +6,7 @@
 void main(void) {
     int c;
     int turn = 1;
-    while(winner() == 0 && !game_over()) {
+    while(!game_over()) {
         system("clear");
         print_board();
         printf("Player %c's turn: ", turn == 1 ? 'x' : 'o');
@@ -20,7 +20,6 @@ void main(void) {
         printf("\n");
         sleep(1);
     }
-    sleep(1);
     system("clear");
     print_board();
     if(winner() == 1)
